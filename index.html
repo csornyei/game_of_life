@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./globals.js"></script>
+    <script src="./functions.js"></script>
+</head>
+
+<body>
+    <header>
+        <form>
+            <h2>
+                Game area size
+            </h2>
+            <div>
+                <label for="width">Width</label>
+                <input type="range" name="width" id="width" min="10" max="50" oninput="onWidthChange(event)">
+                <input type="number" name="widthNumber" min="10" max="50" id="widthNumber"
+                    onchange="onWidthChange(event)">
+            </div>
+            <div>
+                <label for="height">Height</label>
+                <input type="range" name="height" id="height" min="10" max="40" oninput="onHeightChange(event)">
+                <input type="number" name="heightNumber" min="10" max="40" id="heightNumber"
+                    onchange="onHeightChange(event)">
+            </div>
+        </form>
+    </header>
+    <main>
+        <canvas id="canvas" onmousedown="getCursorPosition(event)"></canvas>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
