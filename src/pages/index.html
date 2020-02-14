@@ -13,9 +13,28 @@
 </head>
 
 <body>
-    <h1>Hello Világ!</h1>
-    <h2 class="opensans">Ez egy template projekt</h2>
-    <h2 class="montserrat">Gulp-pal</h2>
+    <header class="opensans">
+        <form>
+            <h2>
+                Game area size
+            </h2>
+            <div>
+                <label for="width">Width</label>
+                <input type="range" name="width" id="width" min="10" max="50" oninput="onWidthChange(event)">
+                <input type="number" name="widthNumber" min="10" max="50" id="widthNumber"
+                    onchange="onWidthChange(event)">
+            </div>
+            <div>
+                <label for="height">Height</label>
+                <input type="range" name="height" id="height" min="10" max="40" oninput="onHeightChange(event)">
+                <input type="number" name="heightNumber" min="10" max="40" id="heightNumber"
+                    onchange="onHeightChange(event)">
+            </div>
+        </form>
+    </header>
+    <main>
+        <canvas id="canvas" onmousedown="getCursorPosition(event)"></canvas>
+    </main>
     <script src="bundle.js"></script>
 </body>
 
