@@ -12,23 +12,37 @@
 
 <body>
     <header>
-        <form>
+        <div>
             <h2>
                 Game area size
             </h2>
             <div>
-                <label for="width">Width</label>
+                <label class="label" for="width">Width</label>
                 <input type="range" name="width" id="width" min="10" max="50" oninput="onWidthChange(event)">
                 <input type="number" name="widthNumber" min="10" max="50" id="widthNumber"
                     onchange="onWidthChange(event)">
+
             </div>
             <div>
-                <label for="height">Height</label>
+                <label class="label" for="height">Height</label>
                 <input type="range" name="height" id="height" min="10" max="40" oninput="onHeightChange(event)">
                 <input type="number" name="heightNumber" min="10" max="40" id="heightNumber"
                     onchange="onHeightChange(event)">
             </div>
-        </form>
+        </div>
+        <div>
+            <label class="label" for="speed">Frame length</label>
+            <input type="range" name="speed" id="speed" min="100" max="1000" step='50' oninput="onSpeedChange(event)">
+            <input type="number" name="speedNumber" min="100" max="1000" step='50' id="speedNumber"
+                onchange="onSpeedChange(event)">
+        </div>
+        <div>
+            <h3>Generation <span id="generation">0</span></h3>
+        </div>
+        <div>
+            <button class="button" onclick="stepButtonClickHandler()">Step</button>
+            <button class="button" onclick="startButtonClickHandler()" id="startStopButton">Start Game</button>
+        </div>
     </header>
     <main>
         <canvas id="canvas" onmousedown="getCursorPosition(event)"></canvas>
