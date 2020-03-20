@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <div>
+        <div class="col">
             <h2>
                 Game area size
             </h2>
@@ -30,11 +30,16 @@
                     onchange="onHeightChange(event)">
             </div>
         </div>
-        <div>
-            <label class="label" for="speed">Frame length</label>
-            <input type="range" name="speed" id="speed" min="100" max="1000" step='50' oninput="onSpeedChange(event)">
-            <input type="number" name="speedNumber" min="100" max="1000" step='50' id="speedNumber"
-                onchange="onSpeedChange(event)">
+        <div class="col">
+            <h2>
+                Frame length
+            </h2>
+            <div>
+                <input type="range" name="speed" id="speed" min="100" max="1000" step='50'
+                    oninput="onSpeedChange(event)">
+                <input type="number" name="speedNumber" min="100" max="1000" step='50' id="speedNumber"
+                    onchange="onSpeedChange(event)">
+            </div>
         </div>
         <div>
             <h3>Generation <span id="generation">0</span></h3>
