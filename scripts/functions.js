@@ -43,7 +43,6 @@ function initCells() {
 }
 
 function updateCELLS(previousWidth, previousHeight, nextWidth, nextHeight) {
-    console.log(`${CELLS.length}:${CELLS[0].length}`);
 
     if (nextWidth > previousWidth) {
         for (let x = previousWidth; x < nextWidth; x++) {
@@ -96,7 +95,6 @@ function fillRectangle(cursorPosition) {
 }
 
 function reDraw() {
-    console.log('reDraw');
     for (let x = 0; x < CELLS.length; x++) {
         const cellCol = CELLS[x];
         for (let y = 0; y < cellCol.length; y++) {
@@ -110,9 +108,7 @@ function reDraw() {
         }
     }
     if (game) {
-        console.log('stepping one');
         const cellValues = calculateCellValues();
-        console.log(cellValues);
         liveOrDie(cellValues);
         if (step) {
             game = false;
