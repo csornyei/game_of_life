@@ -1,0 +1,18 @@
+.btn {
+    padding: .8rem 1.2rem;
+    border: none;
+    outline: none;
+    background-color: #5f86cf;
+    border-radius: 2rem;
+    margin: 1.2rem 1rem;
+    box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+
+    &:hover {
+        background-color: #7593ca;
+    }
+
+    &:active {
+        transform: translateY(2px);
+    }
+}

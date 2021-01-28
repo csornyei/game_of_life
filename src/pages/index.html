@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Index.html</title>
+    <title>Game Of Life</title>
     <link
         href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans|Oswald&display=swap&subset=latin-ext"
         rel="stylesheet">
@@ -15,21 +15,32 @@
 <body>
     <header class="opensans">
         <form>
-            <h2>
+            <h2 class="form-header">
                 Game area size
             </h2>
-            <div>
-                <label for="width">Width</label>
-                <input type="range" name="width" id="width" min="10" max="50" oninput="onWidthChange(event)">
-                <input type="number" name="widthNumber" min="10" max="50" id="widthNumber"
-                    onchange="onWidthChange(event)">
+            <div class="form">
+                <div class="form-group">
+                    <label for="width">Width</label>
+                    <div class="form-group_inputs">
+                        <input type="range" name="width" id="width" min="10" max="50" oninput="onWidthChange(event)">
+                        <input type="number" name="widthNumber" min="10" max="50" id="widthNumber"
+                            onchange="onWidthChange(event)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="height">Height</label>
+                    <div class="form-group_inputs">
+                        <input type="range" name="height" id="height" min="10" max="40" oninput="onHeightChange(event)">
+                        <input type="number" name="heightNumber" min="10" max="40" id="heightNumber"
+                            onchange="onHeightChange(event)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn">Start</button>
+                    <button class="btn">Stop</button>
+                </div>
             </div>
-            <div>
-                <label for="height">Height</label>
-                <input type="range" name="height" id="height" min="10" max="40" oninput="onHeightChange(event)">
-                <input type="number" name="heightNumber" min="10" max="40" id="heightNumber"
-                    onchange="onHeightChange(event)">
-            </div>
+
         </form>
     </header>
     <main>

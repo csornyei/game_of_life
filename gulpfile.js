@@ -115,7 +115,7 @@ gulp.task("watch", gulp.series(["copy-html", "fonts", "ts", "sass", "imagemin",
     gulp.parallel([
         "browserSync",
         function () {
-            gulp.watch("src/scss/main.scss", gulp.series(['sass']));
+            gulp.watch("src/scss/**/*.scss", gulp.series(['sass']));
         },
         function () {
             gulp.watch("src/ts/*.ts", gulp.series(['ts']));

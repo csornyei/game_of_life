@@ -1,4 +1,5 @@
-import { gameAreaSize, GRID_PIXEL_SIZE, rects } from './globals';
+import { gameAreaSize, GRID_PIXEL_SIZE, cellGrid } from './globals';
+import { Cell } from './Cell';
 
 export function changeGameArea(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
     canvas.width = gameAreaSize.width * GRID_PIXEL_SIZE;
@@ -26,23 +27,32 @@ export function createGrid(ctx: CanvasRenderingContext2D) {
     }
 }
 
+export function createCellGrid() {
+    for (let index = 0; index < (gameAreaSize.width / GRID_PIXEL_SIZE); index++) {
+        cellGrid[index] = Array<Cell>();
+        for (let jindex = 0; jindex < (gameAreaSize.height / GRID_PIXEL_SIZE); jindex++) {
+            const neighbours = [];
+            if (index !== 0) {
+
+            }
+            cellGrid[index][jindex] = new Cell(jindex * GRID_PIXEL_SIZE + 1, index * GRID_PIXEL_SIZE + 1, []);
+        }
+    }
+}
+
 export function fillRectangle(cursorPosition: { x: number; y: number }, ctx: CanvasRenderingContext2D) {
     const { x, y } = cursorPosition;
     const rectLeft = x - (x % GRID_PIXEL_SIZE) + 1;
     const rectTop = y - (y % GRID_PIXEL_SIZE) + 1;
-    console.log(rects);
-    for (let index = 0; index < rects.length; index++) {
-        const rectangle = rects[index];
+    console.log(cellGrid);
+    for (let index = 0; index < cellGrid.length; index++) {
+        const rectangle = cellGrid[index];
         if (rectangle.top === rectTop && rectangle.left === rectLeft) {
-            ctx.fillStyle = '#fff';
-            ctx.fillRect(rectLeft, rectTop, GRID_PIXEL_SIZE - 2, GRID_PIXEL_SIZE - 2);
-            rects.splice(index, 1);
+            cellGrid.splice(index, 1);
             return;
         }
     }
-    ctx.fillStyle = '#234354';
-    ctx.fillRect(rectLeft, rectTop, GRID_PIXEL_SIZE - 2, GRID_PIXEL_SIZE - 2);
-    rects.push({
+    cellGrid.push({
         top: rectTop,
         left: rectLeft,
     });
