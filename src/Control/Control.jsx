@@ -1,5 +1,4 @@
 import "./Control.css";
-import { useState } from "react";
 
 
 function Control({ gameAreaSize, setGameAreaSize }) {
@@ -11,8 +10,6 @@ function Control({ gameAreaSize, setGameAreaSize }) {
     const changeHeight = (event) => {
         setGameAreaSize({ ...gameAreaSize, height: event.target.value });
     }
-
-    const [generation, setGeneration] = useState(0);
 
     return (
         <header>
@@ -60,11 +57,8 @@ function Control({ gameAreaSize, setGameAreaSize }) {
                     />
                 </div>
             </div>
-            <div className="col">
-                <h3>Generation: {generation} </h3>
-            </div>
             <div className="col button-col">
-                <button className="button" onClick={() => setGeneration(generation + 1)}>Step</button>
+                <button className="button" onClick={() => { }}>Step</button>
                 <button className="button">Start Game</button>
             </div>
         </header>
