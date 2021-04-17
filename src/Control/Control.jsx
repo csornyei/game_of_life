@@ -1,7 +1,6 @@
 import "./Control.css";
 
-
-function Control({ gameAreaSize, setGameAreaSize }) {
+function Control({ gameAreaSize, setGameAreaSize, animate, setAnimate, fps, setFps }) {
 
     const changeWidth = (event) => {
         setGameAreaSize({ ...gameAreaSize, width: event.target.value });
@@ -57,9 +56,35 @@ function Control({ gameAreaSize, setGameAreaSize }) {
                     />
                 </div>
             </div>
+            <div className="col">
+                <label htmlFor="fps" className="label">Frame/Second</label>
+                <input
+                    type="number"
+                    min="1"
+                    max="60"
+                    name="fps"
+                    id="fps"
+                    value={fps}
+                    onChange={event => setFps(event.target.value)}
+                />
+                <input
+                    type="range"
+                    min="1"
+                    max="60"
+                    name="fpsRange"
+                    id="fpsRange"
+                    value={fps}
+                    onChange={event => setFps(event.target.value)}
+                />
+            </div>
             <div className="col button-col">
-                <button className="button" onClick={() => { }}>Step</button>
-                <button className="button">Start Game</button>
+                <button className="button" onClick={() => setAnimate(!animate)}>
+                    {
+                        animate ?
+                            "Stop" :
+                            "Start"
+                    }
+                </button>
             </div>
         </header>
     )
