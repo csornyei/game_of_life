@@ -1,0 +1,42 @@
+header {
+    background-color: sandybrown;
+    padding: 8px 16px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.label {
+    width: 55px;
+    display: inline-block;
+}
+
+.button {
+    padding: 8px 16px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    background-color: #1a5edd;
+    color: #eee;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #467de4;
+    color: #aaa;
+}
+
+.button:active {
+    transform: translateY(3px);
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-col {
+    flex-direction: row;
+}
